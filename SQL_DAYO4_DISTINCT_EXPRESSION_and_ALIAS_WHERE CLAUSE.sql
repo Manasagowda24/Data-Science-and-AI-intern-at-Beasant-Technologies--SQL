@@ -1,0 +1,171 @@
+use employee;
+
+
+-- WAQTD   Distinct Employee  Name from  employee table
+SELECT distinct Ename
+FROM  emp;
+
+
+-- WAQTD   Distinct Employee  Name  and Dept number from  employee table
+SELECT distinct Ename, Deptno
+FROM  emp;
+
+
+
+
+-- Day 4
+
+-- ASSIGNMENT ON EXPRESSION & ALIAS
+
+-- 1.WAQTD NAME OF THE EMPLOYEE ALONG WITH THEIR ANNUAL SALARY.
+SELECT Ename, Sal*12 AS "Annual Salary"
+FROM emp;
+
+-- 2.WAQTD ENAME AND JOB FOR ALL THE EMPLOYEE WITHTHEIR HALF TERM SALARY.
+SELECT Ename, Job, Sal/6 as "HALF TERM SALARY"
+FROM emp ;
+
+-- 3.WAQTD ALL THE DETAILS OF THE EMPLOYEES ALONG WITH AN ANNUAL BONUS OF 2000.
+SELECT * , Sal*12 + 2000 as " ANNUAL BONUS OF 2000"
+FROM emp;
+
+-- 4. WAQTD NAME SALARY AND SALARY WITH A HIKE OF 10%.
+SELECT Ename, Sal, Sal + Sal/100 * 10 AS "Salary after 10% hike"
+From emp; 
+
+-- 5.WAQTD NAME AND SALARY WITH DEDUCTION OF 25%.
+SELECT Ename, Sal - sal/100 * 25 AS "Salary after 25% Deduction"
+FROM emp;
+
+-- 6.WAQTD NAME AND SALARY WITH MONTHLY HIKE OF 50.
+SELECT Ename, Sal + 50 AS "Salary after 50 hike"
+FROM emp;
+
+-- 7.WAQTD NAME AND ANNUAL SALARY WITH DEDUCTION OF 10%.
+SELECT Ename, Sal*12 - Sal/100*10  as "NNUAL SALARY WITH DEDUCTION OF 10%"
+FROM emp;
+
+-- 8.WAQTD TOTAL SALARY GIVEN TO EACH EMPLOYEE(SAL+COMM).
+SELECT Sal+Comm AS "TOTAL SALARY"
+FROM emp;
+
+-- 9.WAQTD DETAILS OF ALL THE EMPLOYEES ALONG WITH ANNUAL SALARY.
+SELECT * , SAl*12 AS "Annual Salary"
+FROM emp;
+
+-- 10.WAQTD NAME AND DESIGNATION ALONG WITH 100 PENALTY IN SALARY.
+SELECT Ename, Job, Sal - 100 AS "Salary after 100 penalty"
+FROM emp;
+
+
+-- ASSIGNMENT ON WHERE CLAUSE
+-- 1.WAQTD THE ANNUAL SALARY OF THE EMPLOYEE WHOSE NAME IS SMITH
+
+
+Select sal*12 AS "Annual Salary"
+from emp
+where ename = 'SMITH';
+
+
+-- 2.WAQTD NAME OF THE EMPLOYEES WORKING AS CLERK
+
+Select ename
+from emp
+where job = 'CLERK';
+
+
+-- 3.WAQTD SALARY OF THE EMPLOYEES WHO ARE WORKING AS SALESMAN
+
+Select sal
+from emp
+where job = 'SALESMAN';
+
+
+-- 4.WAQTD DETAILS OF THE EMP WHO EARNS MORE THAN 2000
+
+Select *
+from emp
+where sal > 2000;
+
+
+-- 5.WAQTD DETAILS OF THE EMP WHOSE NAME IS JONES
+
+Select *
+from emp
+where ename = 'JONES';
+
+
+-- 6.WAQTD DETAILS OF THE EMP WHO WAS HIRED AFTER 01-JAN-81
+
+Select *
+from emp
+where hiredate > '1981-01-01';
+
+
+-- 7.WAQTD NAME AND SAL ALONG WITH HIS ANNUAL SALARY IF THE ANNUAL SALARY IS MORE THAN 12000
+
+Select ename, sal, sal*12 AS "Annual Sal"
+from emp
+where sal*12 > 12000;
+
+
+-- 8.WAQTD EMPNO OF THE EMPLOYEES WHO ARE WORKING IN DEPT 30
+
+
+Select empno
+from emp
+where deptno = 30;
+
+
+-- 9.WAQTD ENAME AND HIREDATE IF THEY ARE HIRED BEFORE 1981
+
+
+Select ename, hiredate
+from emp
+where hiredate < '1981-01-01';
+
+
+-- 10.WAQTD DETAILS OF THE EMPLOYEES WORKING AS MANAGER
+
+
+Select *
+from emp
+where job = 'MANAGER';
+
+
+-- 11.WAQTD NAME AND SALARY GIVEN TO AN EMPLOYEE IF EMPLOYEE EARNS A COMMISSION OF RUPEES 1400
+
+
+Select ename, sal
+from emp
+where comm = 1400;
+
+
+-- 12.WAQTD DETAILS OF EMPLOYEES HAVING COMMISSION MORE THAN SALARY
+
+Select *
+from emp
+where comm > sal;
+
+
+-- 13.WAQTD EMPNO OF EMPLOYEES HIRED BEFORE THE YEAR 87
+
+Select empno
+from emp
+where hiredate <=  '1986-12-31';
+
+
+-- 14.WAQTD DETAILS OF EMPLOYEES WORKING AS AN ANALYST
+
+
+Select *
+from emp
+where job = 'ANALYST';
+
+
+-- 15.WAQTD DETAILS OF EMPS EARNING MORE THAN 2000 RUPEES PER MONTH
+
+
+Select *
+from emp
+where sal > 2000;
